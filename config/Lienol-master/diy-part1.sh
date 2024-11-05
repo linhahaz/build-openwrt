@@ -1,3 +1,4 @@
+
 #!/bin/bash
 #========================================================================================================================
 # https://github.com/ophub/amlogic-s9xxx-openwrt
@@ -7,10 +8,14 @@
 #========================================================================================================================
 
 # Add a feed source
+# git clone https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall
+# git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+# git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+
 # sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
+# sed -i '$a src-git smpackage https://github.com/linhahaz/small-package' feeds.conf.default
 
 # other
 # rm -rf package/utils/{ucode,fbtest}
-
